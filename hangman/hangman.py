@@ -2,19 +2,40 @@ import random
 from hangman.drawings import drawings
 
 
-words = ["python", "java", "javaScript", "swift", "kotlin", "ruby", "perl", "php", "rust", "go", "haskell", "scala", "dart", "lua", "typescript", "groovy", "assembly", "elixir", "sql", "html", "css"]
+words = [
+    "python",
+    "java",
+    "javaScript",
+    "swift",
+    "kotlin",
+    "ruby",
+    "perl",
+    "php",
+    "rust",
+    "go",
+    "haskell",
+    "scala",
+    "dart",
+    "lua",
+    "typescript",
+    "groovy",
+    "assembly",
+    "elixir",
+    "sql",
+    "html",
+    "css",
+]
 
 
 class Hangman:
-
-    def __init__(self, words = words):
+    def __init__(self, words=words):
         self.words = words
         self.guessed = []
 
     def choose_word(self):
         word = random.choice(self.words)
         return word
-    
+
     def setup(self):
         self.word = self.choose_word()
 
@@ -23,7 +44,7 @@ class Hangman:
 
         self.wrong_guesses = 0
         self.used_letters = []
-    
+
     def display_state(self):
         print(drawings[self.wrong_guesses])
         print()
@@ -32,7 +53,12 @@ class Hangman:
         print("Used letters:", ", ".join(self.used_letters))
 
     def check_guess(self, guess):
-        if len(guess) != 1 or not guess.isalpha() or guess in self.used_letters or guess in self.guessed:
+        if (
+            len(guess) != 1
+            or not guess.isalpha()
+            or guess in self.used_letters
+            or guess in self.guessed
+        ):
             print("Invalid guess!")
             return
 
@@ -45,7 +71,7 @@ class Hangman:
             self.wrong_guesses += 1
             self.used_letters.append(guess)
             print("Incorrect!")
-    
+
     def check_game_over(self):
         if "_" not in self.guessed:
             print(f'You win! The word was "{self.word}"')
@@ -63,4 +89,5 @@ class Hangman:
             self.display_state()
             guess = input("Guess a letter: ").lower()
             self.check_guess(guess)
-            if self.check_game_over(): break
+            if self.check_game_over():
+                break

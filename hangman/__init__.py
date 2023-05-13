@@ -1,2 +1,1 @@
-from hangman.hangman import Hangman
-from hangman.drawings import drawings
+from hangman.hangman import Hangman # noqa F401
