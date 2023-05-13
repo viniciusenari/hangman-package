@@ -7,7 +7,7 @@ The Hangman package is a Python implementation of the classic game, Hangman. It 
 The package can be installed using pip:
 
 ```bash
-pip install hangman
+pip install hangman-package
 ```
 
 ## Usage
