@@ -28,7 +28,7 @@ When `play()` is called, the game will begin and the user will be prompted to gu
 
 ## Contributing
 
-Contributions to the Hangman package are welcome! If you encounter a bug or have a feature request, please open an issue on the [GitHub repository](https://github.com/your-username/hangman).
+Contributions to the Hangman package are welcome! If you encounter a bug or have a feature request, please open an issue on the [GitHub repository](https://github.com/viniciusenari/hangman-package).
 
 If you would like to contribute to the package, please fork the repository and submit a pull request with your changes.
 
