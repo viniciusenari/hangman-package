@@ -24,6 +24,19 @@ hangman = Hangman()
 hangman.play()
 ```
 
+You can pass a list of strings to utilize custom words:
+```python
+from hangman import Hangman
+
+words = ["banana", "orange", "apple", "grape", "strawberry", "lemon", "watermelon"]
+
+# Create a new instance of Hangman with custom words
+hangman = Hangman(words=words)
+
+# Start the game
+hangman.play()
+```
+
 When `play()` is called, the game will begin and the user will be prompted to guess letters to complete the hidden word. The game ends when the user either completes the word or runs out of guesses.
 
 ## Contributing
