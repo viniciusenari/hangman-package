@@ -30,7 +30,6 @@ words = [
 class Hangman:
     def __init__(self, words=words):
         self.words = words
-        self.guessed = []
 
     def choose_word(self):
         word = random.choice(self.words)
@@ -39,6 +38,7 @@ class Hangman:
     def setup(self):
         self.word = self.choose_word()
 
+        self.guessed = []
         for i in range(len(self.word)):
             self.guessed.append("_")
 
